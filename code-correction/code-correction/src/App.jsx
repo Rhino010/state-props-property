@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Component } from 'react';
 
 import './App.css'
 
@@ -7,11 +8,14 @@ class UserProfile extends Component {
   constructor(props) {
       super(props);
       this.state = { name: 'Alex' };
+      this.changeName = this.changeName.bind(this);
   }
 
   // Incorrect function
-  changeName() {
-      this.state.name = 'Charlie';
+  changeName = () => {
+      this.setState({
+        name: 'Charlie'
+      })
   }
 
   render() {
@@ -25,6 +29,6 @@ class UserProfile extends Component {
   }
 }
 
-export default App;
+export default UserProfile;
 
 
